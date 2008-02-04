@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="
+                http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+                http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd">
+
+    <bean id="analysisInputDbRetrieveService" class="org.systemsbiology.myapp.AnalysisInputMockRetrieveService">
+        <property name="analysisInput">
+            <bean class="org.systemsbiology.myapp.AnalysisInput">
+                <property name="x" value="10"/>
+                <property name="y" value="20"/>
+            </bean>
+        </property>
+    </bean>
+
+    <bean id="analysisOutputPersistService" class="org.systemsbiology.myapp.AnalysisOutputMockPersistService">
+        <property name="expectedOutput">
+            <bean class="org.systemsbiology.myapp.AnalysisOutput">
+                <property name="analysisResult" value="200"/>
+            </bean>
+        </property>
+    </bean>
+    
+</beans>
