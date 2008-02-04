@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="
+                http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+                http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd">
+
+    <!-- Factory Bean Definitions -->
+    <bean id="myBeanFactory" class="org.systemsbiology.myapp.MySampleFactory">
+        <property name="defaultBeanName" value="Hello Bean From Factory"/>
+        <property name="globalStartSequence" value="100"/>
+    </bean>
+
+    <!-- the bean to be created via the factory bean -->
+    <bean id="myBean1" factory-bean="myBeanFactory" factory-method="createNewSample"/>
+
+    <bean id="myBean2" class="org.systemsbiology.myapp.MySample" init-method="startSampling" destroy-method="endSampling">
+        <property name="myBeanName" value="Hello Bean 2"/>
+        <property name="startSequence" value="200"/>
+        <property name="secondaryBean" ref="myBean1"/>
+        <property name="usefulMap">
+            <map>
+                <entry key="myName" value="Hector"/>
+                <entry key="usefulBean" value-ref="myBean1"/>
+                <entry key-ref="myBean1" value="this is an useful bean"/>
+            </map>
+        </property>
+        <property name="usefulProperties">
+            <props>
+                <prop key="myName">Hector</prop>
+                <prop key="myWork">ISB</prop>
+            </props>
+        </property>
+        <property name="usefulList">
+            <list>
+                <value>My name is Hector</value>
+                <ref bean="myBean1"/>
+            </list>
+        </property>
+    </bean>
+</beans>
