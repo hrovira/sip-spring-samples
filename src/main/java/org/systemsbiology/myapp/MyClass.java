@@ -6,8 +6,8 @@ import org.apache.commons.dbcp.BasicDataSource;
  * @author: hrovira
  */
 public class MyClass {
-    private RetrieveService<AnalysisInput, Integer> retrieveService;
-    private PersistService<AnalysisOutput> persistService;
+    private AnalysisInputRetrieveService retrieveService;
+    private AnalysisOutputPersistService persistService;
     private Integer analysisTargetId;
 
     public static void main(String[] args) throws Exception {

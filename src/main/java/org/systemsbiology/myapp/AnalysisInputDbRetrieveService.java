@@ -5,7 +5,7 @@ import javax.sql.DataSource;
 /**
  * @author: hrovira
  */
-public class AnalysisInputDbRetrieveService implements RetrieveService<AnalysisInput, Integer> {
+public class AnalysisInputDbRetrieveService implements AnalysisInputRetrieveService {
     private DataSource dataSource;
 
     /*
@@ -16,6 +16,10 @@ public class AnalysisInputDbRetrieveService implements RetrieveService<AnalysisI
     }
 
     public AnalysisInput retrieve(Integer id) {
+        // open connection
+        // execute select statement
+        // build object from result set row
+        // return AnalysisInput
         return null;
     }
 }

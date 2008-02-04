@@ -4,19 +4,19 @@ package org.systemsbiology.myapp;
  * @author: hrovira
  */
 public class MyPojo {
-    private RetrieveService<AnalysisInput, Integer> retrieveService;
-    private PersistService<AnalysisOutput> persistService;
+    private AnalysisInputRetrieveService retrieveService;
+    private AnalysisOutputPersistService persistService;
     private Integer analysisTargetId;
     private boolean outputResultToConsole;
 
     /*
      * Dependency Injection
      */
-    public void setRetrieveService(RetrieveService<AnalysisInput, Integer> svc) {
+    public void setRetrieveService(AnalysisInputRetrieveService svc) {
         this.retrieveService = svc;
     }
 
-    public void setPersistService(PersistService<AnalysisOutput> svc) {
+    public void setPersistService(AnalysisOutputPersistService svc) {
         this.persistService = svc;
     }
 

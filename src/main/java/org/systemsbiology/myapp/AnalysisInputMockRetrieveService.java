@@ -3,7 +3,7 @@ package org.systemsbiology.myapp;
 /**
  * @author: hrovira
  */
-public class AnalysisInputMockRetrieveService implements RetrieveService<AnalysisInput, Integer> {
+public class AnalysisInputMockRetrieveService implements AnalysisInputRetrieveService {
     private AnalysisInput analysisInput;
 
     /*
