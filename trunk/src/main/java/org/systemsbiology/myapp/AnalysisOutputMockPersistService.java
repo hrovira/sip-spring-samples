@@ -5,7 +5,7 @@ import org.junit.Assert;
 /**
  * @author: hrovira
  */
-public class AnalysisOutputMockPersistService implements PersistService<AnalysisOutput> {
+public class AnalysisOutputMockPersistService implements AnalysisOutputPersistService {
     private AnalysisOutput expectedOutput;
 
     /*
